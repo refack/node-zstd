@@ -2,6 +2,7 @@
 
 namespace ZSTD_NODE {
 
+  using Nan::EscapableHandleScope;
   using Nan::NewBuffer;
   using Nan::Set;
 
@@ -16,6 +17,8 @@ namespace ZSTD_NODE {
   }
 
   Local<Array> StreamCoder::PendingChunksAsArray() {
+    EscapableHandleScope scope;
+
     size_t nChunks = pending_output.size();
     Local<Array> chunks = Nan::New<Array>(nChunks);
 
@@ -30,7 +33,7 @@ namespace ZSTD_NODE {
 
     pending_output.clear();
 
-    return chunks;
+    return scope.Escape(chunks);
   }
 
 }
