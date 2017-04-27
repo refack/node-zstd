@@ -1,7 +1,7 @@
 {
   "targets": [
     {
-      "target_name": "compressor",
+      "target_name": "compressor.node",
       "include_dirs": [
         "<!(node -e \"require('nan')\")",
         "deps/zstd/lib",
@@ -34,7 +34,7 @@
       ]
     },
     {
-      "target_name": "decompressor",
+      "target_name": "decompressor.node",
       "include_dirs": [
         "<!(node -e \"require('nan')\")",
         "deps/zstd/lib",
