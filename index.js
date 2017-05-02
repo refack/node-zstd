@@ -7,8 +7,8 @@ exports.decompressSync = decompressSync;
 exports.compressStream = compressStream;
 exports.decompressStream = decompressStream;
 
-var compressor = require('bindings')('compressor.node');
-var decompressor = require('bindings')('decompressor.node');
+var compressor = require('bindings')('nzcompressor.node');
+var decompressor = require('bindings')('nzdecompressor.node');
 var Transform = require('stream').Transform;
 var util = require('util');
 
